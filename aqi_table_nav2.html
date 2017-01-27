@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+  <html class="frame_content">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Forecast</title>
+
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ 
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://mpca.sonomatechdata.com/css/global.css" type="text/css">
+      <link rel="stylesheet" href="https://mpca.sonomatechdata.com/css/aqi.css" type="text/css">
+        <link type="text/css" href="https://mpca.sonomatechdata.com/css/frames/extendedForecastTable.css" rel="stylesheet">
+ 
+ <link rel="stylesheet" href="https://rawgit.com/dKvale/aqi_table_mock/master/css/bootstrap.min.css">
+  
+  <style>
+      body {margin-left: 0px; padding-top: 0px; padding-bottom: 0px; }
+      .clickable-div {cursor: pointer;}
+    
+              .aqi1-rounded {text-align: left; height: 18px; line-height: 6px; font-size: 0.95em; padding: 5px;}
+              .aqi2-rounded {text-align: left; height: 18px; line-height: 6px; font-size: 0.95em; padding: 5px;}
+              .aqi3-rounded {text-align: left; height: 18px; line-height: 6px; font-size: 0.95em; padding: 5px;}
+              .forecast_pollutant {text-align: left; margin-left: 4px; height: 17px; font-size: 0.95em;}
+              .ef_reporting_area {margin-bottom: -2px; margin-right: 0px; font-size: 1.4em; 
+                                  font-style: normal; font-weight: 600; margin-top: 2px; 
+                                  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;}
+              .forecast {height: 20px; margin-bottom: 5px; }
+              .not_today {height: 20px; margin-bottom: 5px; }
+              .forecast_date {font-size: 1.1em; margin-bottom:2px;}
+              .region {font-weight: 200; font-style: normal; font-size: 1.6em; margin-top: 0px;
+                       font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif; }
+              .ef_table {margin-top: 82px; }
+              .ef_header {margin-bottom: 0px; margin-top: -2px; position: fixed; top: 0; 
+                font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif; }
+              .ef_header2 {margin-bottom: 75px; margin-top: 0px; display: none;}
+             
+              .ef_row_noborder {height: 82px;}
+              .page {height: 600px; max-height: 600px; min-height: 600px; margin-top: 0px; margin-bottom: 0px;}
+              .navbar-collapse.collapse {display: block!important;}
+              .navbar-nav>li, .navbar-nav {float: left !important;}
+              .nav>li>a {padding-left: 14px; padding-right: 14px;}
+              
+              .navbar {background-color: #f8f8f8; height: min-height: 50px; height: 50px;}
+              .navbar a {color: #777; padding-bottom: 10px; padding-top: 10px;}
+              .navbar-default .navbar-nav>.active>a {color: #555; background-color: #e7e7e7;}
+              .nav-link {font-size: 1.1em; font-weight: 300; color: #333333; 
+                         font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif; }
+                
+              hr {margin-top: 2px; margin-bottom: 14px; border: 0; border-top: 1px solid #d3d3d3; 
+                  width: 97%; text-align: left; margin-left:0;}
+           
+            </style>
+  
+</head>        
+<body>
+
+
+ <div class="navbar navbar-default navbar-fixed-top" role="navigation" style="border: 0; position: fixed; top: 0; max-width: 405px; width: 405px; 
+                                                            margin-bottom: 0; margin-top: 42px; float:left; display:block; ">
+  <ul class="nav navbar-nav">
+    <li style = "margin-left: 5px;" class="active">
+      <a href="#metro">Metro</a>
+    </li>
+    
+    <li>
+      <a  class="clickable-div" href="#northeast">Northeast</a>
+    </li>
+    
+    <li>
+      <a class="clickable-div" href="#northwest">Northwest</a>
+    </li>
+    
+    <li>
+      <a class="clickable-div" href="#central">Central</a>
+    </li>
+    
+  <li>
+      <a class="clickable-div" href="#south">South</a>
+    </li>
+  </ul>
+</div>
+  
+<h2 class="ef_header">Forecasts</h2>
+  
+
+<!-- METRO section -->
+<div id="page1" class="page" >
+   <a id="metro">&nbsp;</a>  
+  <!--<section id="metro" > -->
+  <div class="ef_table">
+    
+   <span class="region">Metro region</span>
+   <hr color = "#d3d3d3" NOSHADE>
+    
+     <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Minneapolis - St. Paul</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green) | PM 2.5">21</div></td></tr>
+                                <tr><td class="forecast_pollutant">ozone</td></tr> 
+                                </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green) | PM 2.5">20</div></td></tr>
+                                          <tr><td class="forecast_pollutant">particles</td></tr>      
+                                          </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">good</div></td></tr>
+                                                   <tr><td class="forecast_pollutant">particles</td></tr>
+                                                    </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">good</div></td></tr>
+                              <tr><td class="forecast_pollutant">ozone</td></tr>   
+                              </tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi2-rounded" title="Moderate (Yellow)">moderate</div></td></tr>
+                              <tr><td class="forecast_pollutant">ozone</td></tr>   
+                       </tbody>
+                       </table>
+                        </div></div>
+                        
+                         <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Northern Metro</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                   <tr><td class="forecast_pollutant">particles</td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi2-rounded" title="Moderate (Yellow)">60</div></td></tr>
+                                             <tr><td class="forecast_pollutant">particles</td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">good</div></td></tr>
+                                                    <tr><td class="forecast_pollutant">particles</td></tr>
+                                                    </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">good</div></td></tr>
+                              <tr><td class="forecast_pollutant">particles</td></tr>   
+                              </tbody></table></div>
+                            
+                           <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">good</div></td></tr>
+                                 <tr><td class="forecast_pollutant">particles</td></tr>
+                       </tbody>
+                       </table>
+                        </div></div>
+                        
+                        
+                        <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Southern Metro</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                  <tr><td class="forecast_pollutant">ozone</td></tr> 
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                            <tr><td class="forecast_pollutant">ozone</td></tr> 
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">good</div></td></tr>
+                                                   <tr><td class="forecast_pollutant">ozone</td></tr> 
+                                                    </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">good</div></td></tr></tbody>
+                                                     <tr><td class="forecast_pollutant">ozone</td></tr> </table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">good</div></td></tr>
+                                <tr><td class="forecast_pollutant">ozone</td></tr>   
+                       </tbody>
+                       </table>
+                        </div></div>
+</div>
+   <!-- </section> -->
+</div>
+
+<!-- NORTHEAST section -->     
+<div id="page2" class="page">
+  <a id="northeast">&nbsp;</a> 
+ <!-- <section id="northeast" > -->
+  <div class="ef_table">  
+    
+  <span class="region">Northeast Minnesota</span>
+  <hr color = "#d3d3d3" NOSHADE>
+                        <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Duluth</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                  <tr><td class="forecast_pollutant">particles</td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                            <tr><td class="forecast_pollutant">particles</td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">good</div></td></tr>
+                                                   <tr><td class="forecast_pollutant">particles</td></tr>
+                                                    </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">good</div></td></tr>
+                                                     <tr><td class="forecast_pollutant">particles</td></tr>
+                                                     </tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">good</div></td></tr>
+                                <tr><td class="forecast_pollutant">particles</td></tr>
+                       </tbody>
+                       </table>
+                        </div> </div>                         
+                          
+                            <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Ely</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                  <tr><td class="forecast_pollutant">particles</td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                            <tr><td class="forecast_pollutant">particles</td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">12</div></td></tr>
+                                                   <tr><td class="forecast_pollutant">particles</td></tr>
+                                                    </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">46</div></td></tr>
+                                                     <tr><td class="forecast_pollutant">particles</td></tr></tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">22</div></td></tr>
+                                <tr><td class="forecast_pollutant">particles</td></tr>
+                       </tbody>
+                       </table>
+                        </div> </div>  
+                        
+                                <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Fond du Lac - Cloquet</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">12</div></td></tr>
+                                                   </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">46</div></td></tr></tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">22</div></td></tr>
+                       </tbody>
+                       </table>
+                        </div> </div>  
+                                  
+                                  <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Grand Portage</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">12</div></td></tr>
+                                                   </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">46</div></td></tr></tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">22</div></td></tr>
+                       </tbody>
+                       </table>
+                      </div></div>
+    
+    <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Virginia - Hibbing</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">12</div></td></tr>
+                                                   </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">46</div></td></tr></tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">22</div></td></tr>
+                       </tbody>
+                       </table>
+                        </div> </div>
+  </div>
+  <!-- </section> -->
+  </div>
+  
+  <div id="page5" class="page">
+  <a id="northwest">&nbsp;</a> 
+ <div class="ef_table"> 
+   
+ <span class="region">Northwest Minnesota</span>
+  <hr color = "#d3d3d3" NOSHADE>
+ 
+   <div class="ef_row_noborder">
+      <h3 class="ef_reporting_area">Detroit Lakes</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">12</div></td></tr>
+                                                   </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">46</div></td></tr></tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">22</div></td></tr>
+                       </tbody>
+                       </table>
+                        </div></div>
+    
+    
+                        
+                         <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Fargo - Moorhead</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                                 <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">12</div></td></tr>
+                                                   </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">46</div></td></tr></tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">22</div></td></tr>
+                       </tbody>
+                       </table>
+                        </div></div>
+          
+         
+    
+ <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">International Falls</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">12</div></td></tr>
+                                                   </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">46</div></td></tr></tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">22</div></td></tr>
+                       </tbody>
+                       </table>
+                        </div> </div> 
+                     
+                                        
+               <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Red Lake Nation</h3>     
+                            <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">12</div></td></tr>
+                                                   </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">46</div></td></tr></tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">22</div></td></tr>
+                       </tbody>
+                       </table>
+                        </div>   </div>
+                                        
+              </div>
+  </div>                     
+
+
+<div id="page6" class="page" >
+<a id="central">&nbsp;</a> 
+<div class="ef_table">
+   
+<span class="region">Central Minnesota</span>
+<hr color = "#d3d3d3" NOSHADE>
+  
+ <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Brainerd</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                  <tr><td class="forecast_pollutant">ozone</td></tr> 
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                            <tr><td class="forecast_pollutant">ozone</td></tr> 
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">12</div></td></tr>
+                                                   <tr><td class="forecast_pollutant">ozone</td></tr> 
+                                                    </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">46</div></td></tr>
+                                                     <tr><td class="forecast_pollutant">ozone</td></tr> 
+                                                     </tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">22</div></td></tr>
+                                <tr><td class="forecast_pollutant">ozone</td></tr> 
+                       </tbody>
+                       </table>
+                        </div></div> 
+  
+<div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Saint Cloud</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">12</div></td></tr>
+                                                   </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">46</div></td></tr></tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">22</div></td></tr>
+                       </tbody>
+                       </table>
+                        </div></div>
+  
+ </div></div>  
+  
+<div id="page4" class="page" >
+<a id="south">&nbsp;</a> 
+<div class="ef_table">
+   
+<span class="region">Southern Minnesota</span>
+<hr color = "#d3d3d3" NOSHADE>
+ 
+  <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Mankato</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">12</div></td></tr>
+                                                   </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">46</div></td></tr></tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">22</div></td></tr>
+                       </tbody>
+                       </table>
+                        </div></div>
+                                          
+                        <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Marshall</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">12</div></td></tr>
+                                                   </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">46</div></td></tr></tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">22</div></td></tr>
+                       </tbody>
+                       </table>
+                        </div></div>
+                        
+                        
+                        <div class="ef_row_noborder">
+                          <h3 class="ef_reporting_area">Rochester</h3>
+                           <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  <tr><td class="forecast_date">Today</td></tr>
+                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">21</div></td></tr>
+                                 </tbody>
+                                      </table>
+                                      </div>
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">Thu</td></tr>
+                                             <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">20</div></td></tr>
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">Fri</td></tr>
+                                                  <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">12</div></td></tr>
+                                                   </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="forecast not_today">
+                                                   <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sat</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">46</div></td></tr></tbody></table></div>
+                              <div class="forecast not_today">
+                              <table class="ef_row_datatable">
+                              <tbody class="ef_row_datatable_body">
+                              <tr><td class="forecast_date">Sun</td></tr>
+                              <tr><td class="forecast_aqi"><div class="aqi1-rounded" title="Good (Green)">22</div></td></tr>
+                       </tbody>
+                       </table>
+                        </div></div>
+  
+  <div class="ef_row_noborder" style="min-height: 200px;"> </div>
+</div>
+</div>
+ 
+  <div id="page6" class="page" >
+    <p>&nbsp;</p>
+  </div>
+
+<!-- jQuery 
+<script src="https://blackrockdigital.github.io/startbootstrap-scrolling-nav/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript 
+<script src="https://blackrockdigital.github.io/startbootstrap-scrolling-nav/js/bootstrap.min.js"></script>
+-->
+
+ <script>
+   $("a").on("click", function(){
+     $(".nav").find(".active").removeClass("active");
+     $(this).parent().addClass("active");
+   });
+</script>
+   
+
+  
+</body>
+</html>

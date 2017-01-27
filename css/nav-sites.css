@@ -1,0 +1,51 @@
+body {margin-left: 0px; padding-top: 0px; padding-bottom: 0px; background-color: transparent;
+  -webkit-backface-visibility: hidden; -webkit-transform: translateZ(0);
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;}
+
+.aqi1-rounded {text-align: left; height: 18px; line-height: 6px; font-size: 0.95em; padding: 5px;}
+
+.aqi2-rounded {text-align: left; height: 18px; line-height: 6px; font-size: 0.95em; padding: 5px;}
+ 
+.aqi3-rounded {text-align: left; height: 18px; line-height: 6px; font-size: 0.95em; padding: 5px;}
+
+.forecast_pollutant {text-align: left; margin-left: 4px; height: 17px; font-size: 0.95em;}
+
+.ef_reporting_area {margin-bottom: -2px; margin-right: 0px; font-size: 1.4em; 
+                                  font-style: normal; font-weight: 600; margin-top: 2px; 
+                                  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;}
+
+.forecast {height: 20px; margin-bottom: 5px; }
+
+.not_today {height: 20px; margin-bottom: 5px; }
+ 
+.forecast_date {font-size: 1.1em; margin-bottom:2px;}
+
+.region {font-weight: 200; font-style: normal; font-size: 1.6em; margin-top: 4px;
+                       font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif; }
+
+.ef_table {margin-top: 75px; }
+
+.ef_header {margin-bottom: 10px; margin-top: 0px; position: fixed; top: 0; font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;}
+
+.ef_header2 {margin-bottom: 75px; margin-top: 0px; display: none;}
+
+a {margin-top: 0; }
+
+a:active { text-decoration: none; }
+
+.ef_row_noborder {height: 82px;}
+
+.page {height: 750px; max-height: 750px; min-height: 750px; margin-top: 0px; margin-bottom: 0px;}
+
+.navbar-collapse.collapse {display: block!important; min-height: 38px;}
+
+.navbar-nav>li, .navbar-nav {float: left !important; min-height: 38px;}
+
+.navbar {min-height: 38px; border: 0;}
+
+.navbar a {color: #333333; padding-bottom: 10px; padding-top: 10px; min-height: 38px;}
+ 
+.nav-link {font-size: 1.2em; font-weight: 300; color: #333333; font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif; }
+              
+ hr {margin-top: 2px; margin-bottom: 14px; border: 0; border-top: 1px solid #d3d3d3; width: 97%; text-align: left; margin-left:0;}
+           

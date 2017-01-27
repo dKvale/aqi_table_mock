@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+		
+<style>
+.clickable-div { cursor: pointer;}
+.scroll-wrapper {  
+	overflow: hidden;
+	height: 610px;
+	width: 420px;
+	margin-left:0px;
+} 
+ 
+.scroll-wrapper iframe { 
+	/* nada! */ 
+} 	
+
+</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://rawgit.com/dKvale/aqi_table_mock/master/js/embed_html.js"></script>
+
+</head>
+	
+<body >
+ 
+<div class="container" style ="margin-left: 10px;">	
+	
+<div class="row">
+
+<div class="col-lg-1">
+</div>
+	
+<div class="col-lg-5">	
+<iframe frameborder="0" height="560" id="map_frame" id="map_frame" src="https://mpca.sonomatechdata.com/reportingarea/contourMap" width="400"
+style="margin-right:25px;" align="top"></iframe>
+</div>	
+	
+<div class="col-lg-5">		
+<iframe frameborder="0" height="515" id="cc_frame" src="https://mpca.sonomatechdata.com/sites/currentConditions" width="400" align="top"> </iframe> 
+</div>
+	
+<div class="col-lg-1">
+</div>
+</div>
+	
+<div class="row">
+<div class="col-lg-1">
+</div>
+	
+<div class="col-lg-5 col-lg-push-5">
+<iframe frameborder="0" height="405" id="ef_frame" src="https://mpca.sonomatechdata.com/reportingarea/detailedForecast" 
+	width="405" align="top" style="margin-right:28px;"></iframe>
+</div>
+	
+<div class="col-lg-5 col-lg-pull-5">	
+   <div class="scroll-wrapper" style ="overflow:hidden;"> 
+<!-- <div w3-include-html="https://rawgit.com/dKvale/aqi_table_mock/master/nav_sites/metro.html" style="overflow:hidden; width: 420px; height: 610px;  margin-left:0px;" >
+	</div>	    
+
+<script>
+w3IncludeHTML();
+</script>
+</div>   
+       <object type="text/html" data="https://rawgit.com/dKvale/aqi_table_mock/master/aqi_table_regions_nav.html"   
+	       width = "440" height= "610" style="overflow:hidden; width: 440px; height: 610px;  margin-left:0px;" > </object>	
+-->
+<iframe frameborder="0" height="690" scrolling="no" 
+	src="https://dkvale.github.io/aqi_table_mock/aqi_table_nav2.html#metro" width="420"  
+	style="min-height: 445px; margin-right:0px;" > 
+</iframe>
+	
+</div>		
+		
+	
+<div class="col-lg-1">
+</div>
+	
+</div></div>
+
+</div>
+	
+</body>
+</html>

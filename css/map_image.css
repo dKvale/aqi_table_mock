@@ -1,0 +1,13 @@
+.forecast_map {
+    margin-bottom:2px; 
+    width: 400px;
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.forecast_date {font-size: 1.55em;}
+
+.directions { font-size: .85em; font-style: italic; display: none;}
+
+img {width: 405px; border-radius: 10px; height: 380px;}
+
+.forecast {border:0; min-height: 450px; height: 450px; width: 425px; margin-right:0px;}

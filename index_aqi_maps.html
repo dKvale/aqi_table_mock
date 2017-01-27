@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <base href="https://mpca.sonomatechdata.com/reportingarea/forecasts">
+  
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/global.css" type="text/css">
+      <link rel="stylesheet" href="/css/aqi.css" type="text/css">
+        <link rel="stylesheet" href="/css/lib/jquery-ui-1.10.0.custom.min.css" type="text/css">
+          <link type="text/css" href="/css/frames/extendedForecastTable.css" rel="stylesheet">
+ 
+  <link rel="stylesheet" href="https://rawgit.com/dKvale/aqi_table_mock/master/css/bootstrap.min.css">
+	
+
+<style>
+	     
+              .forecast {height: 150px; margin-bottom: 5px; width: 132px;}
+	      .directions { font-size: .85em; font-style: italic; margin-left: 91px;}
+	
+              .not_today {height: 150px; margin-bottom: 5px; width: 132px;}
+              .forecast_date {font-size: 1.15em; margin-bottom:2px; width: 122px;  color: #0000ee;
+                text-decoration: underline;
+	        cursor: pointer;}
+           
+              .ef_table {margin-top: 0px; }
+              .ef_header {margin-bottom: 10px; margin-top: 0px;  font-size: 1.9em; min-width: 420px; width: 420px;
+		          color: black;
+                          font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif; }
+              .ef_row_nav {min-height: 195px; min-width: 420px; width: 420px;}
+              .ef_row_map {height: 450px; min-width: 420px; width: 420px;}
+             
+             
+              img {width: 122px; height: 126px; border: 2px solid #0000ee; border-radius: 5px;} 
+	
+	      a:-webkit-any-link {
+                color: #0000ee;
+                text-decoration: underline;
+	        cursor: pointer;
+	        }
+	
+            </style>
+	
+</head>
+	
+<body>
+ 
+<div class="container" style ="">	
+	
+<div class="row">
+
+<div class="col-lg-1">
+</div>
+	
+<div class="col-lg-5">	
+<iframe frameborder="0" height="560" id="map_frame" id="map_frame" src="https://mpca.sonomatechdata.com/reportingarea/contourMap" width="400"
+style="margin-right: 25px;" align="top"></iframe>
+</div>	
+	
+<div class="col-lg-5">		
+<iframe frameborder="0" height="515" id="cc_frame" src="https://mpca.sonomatechdata.com/sites/currentConditions" width="400" align="top"> </iframe> 
+</div>
+	
+<div class="col-lg-1">
+</div>
+</div>
+	
+<div class="row">
+<div class="col-lg-1">
+</div>
+<div class="col-lg-5 col-lg-push-5">
+<iframe frameborder="0" height="405" id="ef_frame" src="https://mpca.sonomatechdata.com/reportingarea/detailedForecast" 
+	width="405" align="top" style="margin-right:28px;"></iframe>
+</div>
+	
+<div class="col-lg-5 col-lg-pull-5">
+
+
+
+<div class="ef_table">
+<div class="ef_row_nav">
+	<h2 class="ef_header" id="ef_header" name="ef_header">Forecasts</h2>
+	
+	
+                      <div class="forecast">
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                                  
+                                  <tr><td class="forecast_date">
+                                    <a target="f_map" href="https://dkvale.github.io/aqi_table_mock/img/aqi_map.html">Today</a>
+                                    </td></tr>
+                                  <tr><td class="forecast_aqi">
+				    <div class="aqi_map">
+                                      <a target="f_map" href="https://dkvale.github.io/aqi_table_mock/img/aqi_map.html">
+                                      <img src="https://dkvale.github.io/aqi_table_mock/img/aqi_map.png"></a>
+                                    </div>
+			          </td></tr>
+                                  
+                                </tbody>
+                                      </table>
+                                     </div>
+                                      
+                                      <div class="forecast not_today">
+                                        <table class="ef_row_datatable">
+                                          <tbody class="ef_row_datatable_body">
+                                            <tr><td class="forecast_date">
+                                              <a target="f_map" href="https://dkvale.github.io/aqi_table_mock/img/aqi_map2.html">Thursday</a>
+                                              </td></tr>
+                                              <tr><td class="forecast_aqi"><div class="aqi_map">
+                                                <a target="f_map" href="https://dkvale.github.io/aqi_table_mock/img/aqi_map2.html">
+                                                  <img src="https://raw.githubusercontent.com/dKvale/aqi_table_mock/master/img/aqi_map2.png">
+                                                </a></div></td></tr>
+                                   
+                                          </tbody>
+                                                </table>
+                                                </div>
+	
+                                                <div class="forecast not_today">
+                                                  <table class="ef_row_datatable">
+                                                    <tbody class="ef_row_datatable_body">
+                                                 <tr><td class="forecast_date">
+                                                   <a target="f_map" href="https://dkvale.github.io/aqi_table_mock/img/aqi_map3.html">Friday</a>
+                                                   </td></tr>
+                                                 <tr><td class="forecast_aqi"><div class="aqi_map">
+                                                   <a target="f_map" href="https://dkvale.github.io/aqi_table_mock/img/aqi_map3.html">
+                                                   <img src="https://raw.githubusercontent.com/dKvale/aqi_table_mock/master/img/aqi_map3.png">
+                                                     </a>
+                                                   </div></td></tr>
+                                                    </tbody>
+                                                   </table>
+                                   </div> 
+	</div>
+                                                   
+<div class = "directions">Click map above to change forecast day</div>   
+	
+<div class="ef_row_map">
+             
+                              <table class="ef_row_datatable">
+                                <tbody class="ef_row_datatable_body">
+                              <!--     <tr><td class="forecast_date" style="font-size:1.3em;">Today</td></tr> -->
+                                  <tr><td class="forecast_map"><div class="big_map">
+                                    <iframe name="f_map" style="width: 415px; border:0; height: 420px" scrolling="no" src="https://dkvale.github.io/aqi_table_mock/img/aqi_map.html"></iframe></div></td></tr>
+                                </tbody>
+                                      </table>
+                                      </div>
+
+</div></div>
+	
+<div class="col-lg-1">
+</div>
+	
+</div>
+
+</div>
+
+	<!--
+<script>
+   $("#nav a").on("click", function(){
+     $("#nav").find("#active").removeClass("active");
+     $(this).parent().addClass("active");
+   });
+</script>
+-->
+	
+	
+</body>
+</html>

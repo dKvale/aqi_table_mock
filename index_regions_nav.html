@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="utf-8">
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+ 
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://rawgit.com/dKvale/aqi_table_mock/master/css/bootstrap.min.css"> 
+	
+	
+<style>
+	     .ef_header {margin-bottom: 5px; margin-top: 0px; font-size: 1.7em;
+                         font-weight: 500; width: 420px;
+                font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif; }
+	
+	      .nav {list-style-type:none; font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;}
+              .navbar {display: block!important;}
+              .navbar-nav>li, .navbar2-nav {float: left !important; 
+		                             list-style-type:none;
+		                             -webkit-padding-start: 0px;
+		                             display: block;
+	                                     margin-top: 0px;}
+	      
+              .nav>li>a {padding-left: 13px; padding-right: 13px; font-size: 1.15em; font-weight: 350; color: #777; 
+		         padding-bottom: 14px; padding-top: 14px; text-decoration: none;}
+            
+              .navbar {background-color: #f8f8f8; height: min-height: 50px; height: 50px;}
+      
+              .navbar-default .navbar-nav>.active>a {
+		      color: #555; 
+		      background-color: #e7e7e7; 
+		      text-decoration: none; 
+		      pointer-events: none; 
+		      cursor: default;}
+             /* 
+	.navbar a {}
+	.nav-link {font-weight: 300; color: #333333; text-decoration: none;
+                         font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif; }
+	
+	 a:-webkit-any-link {
+                color: -webkit-link;
+                text-decoration: none;
+	        cursor: pointer;
+	        } */
+           
+            </style>
+	
+</head>
+	
+<body>
+ 
+<div class="container">	
+	
+<div class="row">
+
+<div class="col-lg-1">
+</div>
+	
+<div class="col-lg-5">	
+<iframe frameborder="0" height="560" id="map_frame" id="map_frame" src="https://mpca.sonomatechdata.com/reportingarea/contourMap" width="400"
+style="margin-right: 25px;" align="top"></iframe>
+</div>	
+	
+<div class="col-lg-5">		
+<iframe frameborder="0" height="515" id="cc_frame" src="https://mpca.sonomatechdata.com/sites/currentConditions" width="400" align="top"> </iframe> 
+</div>
+	
+<div class="col-lg-1">
+</div>
+</div>
+	
+<div class="row">
+<div class="col-lg-1">
+</div>
+	
+<div class="col-lg-5 col-lg-push-5">
+<iframe frameborder="0" height="405" id="ef_frame" src="https://mpca.sonomatechdata.com/reportingarea/detailedForecast" 
+	width="405" align="top" style="margin-right:28px;"></iframe>
+</div>
+	
+<div class="col-lg-5 col-lg-pull-5">	
+<h2 class="ef_header" id="ef_header" name="ef_header">Forecasts</h2>
+	
+<div class="navbar navbar-default" style="border: 0; width: 406px; margin-bottom: 0;  display:block;">
+  
+<div class="nav navbar-nav">
+    <li class="active" style = "margin-left: 0px;"> 
+      <a href="https://dkvale.github.io/aqi_table_mock/img/metro.html" target="f_map">
+	      Metro</a>
+	   
+    </li>
+    
+    <li>
+      <a href="https://dkvale.github.io/aqi_table_mock/img/northeast.html" target="f_map">
+	      Northeast</a>
+	    
+    </li>
+    
+    <li>
+      <a href="https://dkvale.github.io/aqi_table_mock/img/northwest.html" target="f_map">
+	      Northwest</a>
+	    
+    </li>
+    
+    <li>
+      <a href="https://dkvale.github.io/aqi_table_mock/img/central.html" target="f_map">
+	      Central</a>
+	    
+    </li>
+    
+  <li style = "margin-right: 2px;">
+      <a href="https://dkvale.github.io/aqi_table_mock/img/south.html" target="f_map">
+	      South</a>
+	
+    </li>
+  </div>
+</div>
+  		
+<div id="result-iframe-wrap">
+<iframe frameborder="0" height="520" scrolling="no" id="f_map"	name="f_map"	
+src="https://dkvale.github.io/aqi_table_mock/aqi_table_regions_list.html#metro" width="430"  
+	sandbox="allow-scripts allow-pointer-lock allow-same-origin allow-popups"
+	style="min-height: 450px; margin-right:0px;" >
+</iframe>		
+</div></div>
+	
+<div class="col-lg-1">
+</div>
+	
+</div>
+
+</div>
+
+
+<script>
+   $(".nav a").on("click", function(){
+     $(".nav").find(".active").removeClass("active");
+     $(this).parent().addClass("active");
+   });
+</script>
+
+
+	
+	
+</body>
+</html>
